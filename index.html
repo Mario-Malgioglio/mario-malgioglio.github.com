@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio · Minimal</title>
+    <!-- Fuente y estilos base -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <style>
+        /* ----- RESET & BASE ----- */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #faf9f8;
+            --text: #1c1c1c;
+            --gray: #6b6b6b;
+            --light-gray: #eaeaea;
+            --white: #ffffff;
+            --accent: #2a2a2a;
+            --radius: 12px;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            --transition: 0.25s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ----- TYPOGRAPHY ----- */
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        p {
+            color: var(--gray);
+            max-width: 65ch;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ----- LAYOUT ----- */
+        section {
+            margin: 4rem 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* ----- HEADER / HERO ----- */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1rem 0 2rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .hero .title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        /* ----- PROYECTOS ----- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.5rem 1.8rem;
+            box-shadow: var(--shadow);
+            transition: transform var(--transition), box-shadow var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-card .project-tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gray);
+            background: var(--light-gray);
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            align-self: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.3rem;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            margin: 0.4rem 0 1.2rem;
+            flex: 1;
+        }
+
+        .project-link {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: gap var(--transition);
+            border-bottom: 1.5px solid transparent;
+            align-self: flex-start;
+        }
+
+        .project-link:hover {
+            gap: 0.8rem;
+            border-bottom-color: var(--accent);
+        }
+
+        .project-link::after {
+            content: '→';
+            font-size: 1.1rem;
+            transition: transform var(--transition);
+        }
+
+        .project-link:hover::after {
+            transform: translateX(3px);
+        }
+
+        /* ----- SOBRE MÍ (mini) ----- */
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            background: var(--white);
+            padding: 2rem 2.2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 220px;
+        }
+
+        .about-text p {
+            font-size: 1rem;
+        }
+
+        .about-stats {
+            flex: 1;
+            min-width: 140px;
+            display: flex;
+            gap: 2rem;
+            justify-content: flex-start;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat .label {
+            font-size: 0.8rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* ----- CONTACTO ----- */
+        .contact {
+            background: var(--white);
+            padding: 2rem 2.2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .contact h2 {
+            border: none;
+            padding: 0;
+            margin: 0;
+            font-size: 1.6rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.8rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--gray);
+            transition: color var(--transition);
+            border-bottom: 1.5px solid transparent;
+        }
+
+        .contact-links a:hover {
+            color: var(--text);
+            border-bottom-color: var(--text);
+        }
+
+        /* ----- FOOTER ----- */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--light-gray);
+            font-size: 0.85rem;
+            color: var(--gray);
+            text-align: center;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero .title {
+                font-size: 1rem;
+            }
+
+            .about {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+
+            .about-stats {
+                width: 100%;
+                justify-content: space-around;
+            }
+
+            .contact {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.5rem;
+            }
+
+            .contact-links {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 1.2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .stat .number {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ====== HERO ====== -->
+        <header class="hero">
+            <h1>Mario Malgioglio</h1>
+            <div class="title">Administración y seguridad de aplicaciones Web</div>
+        </header>
+
+        <!-- ====== PROYECTOS ====== -->
+        <section>
+            <h2>Proyectos</h2>
+            <div class="projects-grid">
+
+                <!-- Proyecto 1: KSec -->
+                <article class="project-card">
+                    <span class="project-tag">KSec</span>
+                    <h3>Auditor Seguridad en Servidores Web</h3>
+                    <p>Permite analizar cualquier sitio o servicio web en tiempo real, evaluar su postura de seguridad, obtener un puntaje global (0 a 100), generar reportes ejecutivos en PDF y obtener plantillas de configuración de remediación inmediata para servidores populares (Nginx, Apache, Caddy, Cloudflare y Node.js/Express).</p>
+                    <a href="https://github.com/Mario-Malgioglio/KSec-Web-Security" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                </article>
+
+                <!-- Proyecto 2 -->
+                <article class="project-card">
+                    <span class="project-tag">Desarrollo</span>
+                    <h3>TaskFlow</h3>
+                    <p>Aplicación web de gestión de tareas con drag &amp; drop, construida con vanilla JS y CSS Grid.</p>
+                    <a href="#" class="project-link">Ver proyecto</a>
+                </article>
+
+                <!-- Proyecto 3 -->
+                <article class="project-card">
+                    <span class="project-tag">Branding</span>
+                    <h3>Estudio K</h3>
+                    <p>Identidad visual y sitio web para un estudio de arquitectura. Paleta neutra y elegancia minimal.</p>
+                    <a href="#" class="project-link">Ver proyecto</a>
+                </article>
+
+                <!-- Proyecto 4 -->
+                <article class="project-card">
+                    <span class="project-tag">Front-end</span>
+                    <h3>ClimaNow</h3>
+                    <p>PWA del clima con geolocalización y gráficos interactivos. Diseño adaptativo y rápido.</p>
+                    <a href="#" class="project-link">Ver proyecto</a>
+                </article>
+
+                <!-- Proyecto 5 -->
+                <article class="project-card">
+                    <span class="project-tag">Diseño UX</span>
+                    <h3>EcoRuta</h3>
+                    <p>Prototipo de app para rutas sostenibles. Investigación de usuarios y flujos de navegación.</p>
+                    <a href="#" class="project-link">Ver proyecto</a>
+                </article>
+
+                <!-- Proyecto 6 -->
+                <article class="project-card">
+                    <span class="project-tag">Web</span>
+                    <h3>Museo Abierto</h3>
+                    <p>Micrositio para una exposición de arte contemporáneo con animaciones sutiles y tipografía expresiva.</p>
+                    <a href="#" class="project-link">Ver proyecto</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ====== SOBRE MÍ (mini) ====== -->
+        <section>
+            <div class="about">
+                <div class="about-text">
+                    <h2 style="border: none; padding: 0; margin: 0 0 0.5rem 0;">Sobre mí</h2>
+                    <p>
+                        Diseñador y desarrollador front-end con 6 años de experiencia.
+                        Me apasiona crear interfaces que combinan estética y usabilidad.
+                        Trabajo con equipos multidisciplinarios y siempre busco aprender
+                        nuevas tecnologías.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="number">6+</span>
+                        <span class="label">Años</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">24</span>
+                        <span class="label">Proyectos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">12</span>
+                        <span class="label">Clientes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CONTACTO ====== -->
+        <section>
+            <div class="contact">
+                <h2>Contacto</h2>
+                <div class="contact-links">
+                    <a href="mailto:hola@mariomalgioglio.com">hola@mariomalgioglio.com</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Behance</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== FOOTER ====== -->
+        <footer class="footer">
+            <p>&copy; 2026 · Mario Malgioglio · Hecho con </p>
+        </footer>
+
+    </div>
+
+    <!-- pequeño script para mostrar año dinámico (opcional) -->
+    <script>
+        // Solo para actualizar el año en el footer si se desea
+        const footer = document.querySelector('.footer p');
+        if (footer) {
+            const year = new Date().getFullYear();
+            footer.innerHTML = `&copy; ${year} · Mario Malgioglio · Hecho con `;
+        }
+    </script>
+
+</body>
+</html>
