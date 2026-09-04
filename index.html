@@ -179,54 +179,6 @@
             transform: translateX(3px);
         }
 
-        /* ----- SOBRE MÍ (mini) ----- */
-        .about {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-            background: var(--white);
-            padding: 2rem 2.2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(0, 0, 0, 0.02);
-        }
-
-        .about-text {
-            flex: 2;
-            min-width: 220px;
-        }
-
-        .about-text p {
-            font-size: 1rem;
-        }
-
-        .about-stats {
-            flex: 1;
-            min-width: 140px;
-            display: flex;
-            gap: 2rem;
-            justify-content: flex-start;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat .number {
-            font-size: 2rem;
-            font-weight: 700;
-            display: block;
-            line-height: 1.2;
-        }
-
-        .stat .label {
-            font-size: 0.8rem;
-            color: var(--gray);
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
         /* ----- CONTACTO ----- */
         .contact {
             background: var(--white);
@@ -278,6 +230,17 @@
             text-align: center;
         }
 
+        .footer a {
+            color: var(--gray);
+            transition: color var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+
+        .footer a:hover {
+            color: var(--text);
+            border-bottom-color: var(--text);
+        }
+
         /* ----- RESPONSIVE ----- */
         @media (max-width: 640px) {
             body {
@@ -294,16 +257,6 @@
 
             .hero .title {
                 font-size: 1rem;
-            }
-
-            .about {
-                flex-direction: column;
-                padding: 1.5rem;
-            }
-
-            .about-stats {
-                width: 100%;
-                justify-content: space-around;
             }
 
             .contact {
@@ -326,9 +279,6 @@
         @media (max-width: 400px) {
             h1 {
                 font-size: 2rem;
-            }
-            .stat .number {
-                font-size: 1.6rem;
             }
         }
     </style>
@@ -356,75 +306,14 @@
                     <a href="https://github.com/Mario-Malgioglio/KSec-Web-Security" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                 </article>
 
-                <!-- Proyecto 2 -->
+                <!-- Proyecto 2: Wi-Fi Security -->
                 <article class="project-card">
-                    <span class="project-tag">Desarrollo</span>
-                    <h3>TaskFlow</h3>
-                    <p>Aplicación web de gestión de tareas con drag &amp; drop, construida con vanilla JS y CSS Grid.</p>
-                    <a href="#" class="project-link">Ver proyecto</a>
+                    <span class="project-tag">Wi-Fi Security</span>
+                    <h3>Wi-Fi Security &amp; Protocol Auditor</h3>
+                    <p>Suite defensiva y auditor de protocolos inalámbricos IEEE 802.11 (WPA3, WPA2, WEP, Open, OWE). Desarrollada en Golang puro (sin dependencias externas) con interfaz visual reactiva, modo consola CLI, API REST JSON, exportación CSV y liberación determinista de memoria RAM al cerrar el navegador.</p>
+                    <a href="https://github.com/Mario-Malgioglio/Wi-Fi-Security-Protocol-Auditor" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
                 </article>
 
-                <!-- Proyecto 3 -->
-                <article class="project-card">
-                    <span class="project-tag">Branding</span>
-                    <h3>Estudio K</h3>
-                    <p>Identidad visual y sitio web para un estudio de arquitectura. Paleta neutra y elegancia minimal.</p>
-                    <a href="#" class="project-link">Ver proyecto</a>
-                </article>
-
-                <!-- Proyecto 4 -->
-                <article class="project-card">
-                    <span class="project-tag">Front-end</span>
-                    <h3>ClimaNow</h3>
-                    <p>PWA del clima con geolocalización y gráficos interactivos. Diseño adaptativo y rápido.</p>
-                    <a href="#" class="project-link">Ver proyecto</a>
-                </article>
-
-                <!-- Proyecto 5 -->
-                <article class="project-card">
-                    <span class="project-tag">Diseño UX</span>
-                    <h3>EcoRuta</h3>
-                    <p>Prototipo de app para rutas sostenibles. Investigación de usuarios y flujos de navegación.</p>
-                    <a href="#" class="project-link">Ver proyecto</a>
-                </article>
-
-                <!-- Proyecto 6 -->
-                <article class="project-card">
-                    <span class="project-tag">Web</span>
-                    <h3>Museo Abierto</h3>
-                    <p>Micrositio para una exposición de arte contemporáneo con animaciones sutiles y tipografía expresiva.</p>
-                    <a href="#" class="project-link">Ver proyecto</a>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- ====== SOBRE MÍ (mini) ====== -->
-        <section>
-            <div class="about">
-                <div class="about-text">
-                    <h2 style="border: none; padding: 0; margin: 0 0 0.5rem 0;">Sobre mí</h2>
-                    <p>
-                        Diseñador y desarrollador front-end con 6 años de experiencia.
-                        Me apasiona crear interfaces que combinan estética y usabilidad.
-                        Trabajo con equipos multidisciplinarios y siempre busco aprender
-                        nuevas tecnologías.
-                    </p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="number">6+</span>
-                        <span class="label">Años</span>
-                    </div>
-                    <div class="stat">
-                        <span class="number">24</span>
-                        <span class="label">Proyectos</span>
-                    </div>
-                    <div class="stat">
-                        <span class="number">12</span>
-                        <span class="label">Clientes</span>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -433,28 +322,27 @@
             <div class="contact">
                 <h2>Contacto</h2>
                 <div class="contact-links">
-                    <a href="mailto:hola@mariomalgioglio.com">hola@mariomalgioglio.com</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
-                    <a href="#">Behance</a>
+                    <a href="mailto:mariomalgioglio@gmail.com">mariomalgioglio@gmail.com</a>
+                    <a href="https://github.com/Mario-Malgioglio" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/Mario-Malgioglio" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
         </section>
 
         <!-- ====== FOOTER ====== -->
         <footer class="footer">
-            <p>&copy; 2026 · Mario Malgioglio · Hecho con </p>
+            <p>&copy; 2026 · <a href="https://mario-malgioglio.github.io/" target="_blank" rel="noopener noreferrer">Mario Malgioglio</a></p>
         </footer>
 
     </div>
 
-    <!-- pequeño script para mostrar año dinámico (opcional) -->
+    <!-- pequeño script para mantener el año dinámico y el enlace -->
     <script>
-        // Solo para actualizar el año en el footer si se desea
         const footer = document.querySelector('.footer p');
         if (footer) {
             const year = new Date().getFullYear();
-            footer.innerHTML = `&copy; ${year} · Mario Malgioglio · Hecho con `;
+            // Mantener el enlace intacto, solo actualizar el año
+            footer.innerHTML = `&copy; ${year} · <a href="https://mario-malgioglio.github.io/" target="_blank" rel="noopener noreferrer">Mario Malgioglio</a>`;
         }
     </script>
 
