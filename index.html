@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio · Mario Malgioglio</title>
-    <!-- Fuente y estilos base -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
@@ -19,17 +18,17 @@
         }
 
         :root {
-            --bg-start: #f0f4ff;
-            --bg-end: #e0e9ff;
-            --text: #1e293b;
-            --gray: #475569;
-            --light-gray: #e2e8f0;
+            --bg-start: #f8f8f8;
+            --bg-end: #eaeaea;
+            --text: #1a1a1a;
+            --gray: #4a4a4a;
+            --light-gray: #d0d0d0;
             --white: #ffffff;
-            --accent: #4f46e5;
-            --accent-hover: #4338ca;
+            --accent: #222222;
+            --accent-hover: #000000;
             --radius: 16px;
-            --shadow: 0 10px 30px rgba(79, 70, 229, 0.08);
-            --shadow-hover: 0 20px 40px rgba(79, 70, 229, 0.15);
+            --shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+            --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -59,12 +58,11 @@
         }
 
         h1 {
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             line-height: 1.1;
-            background: linear-gradient(135deg, #1e293b, #4f46e5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text);
+            background: none;
+            -webkit-text-fill-color: var(--text);
         }
 
         h2 {
@@ -109,7 +107,7 @@
             flex-direction: column;
             gap: 0.5rem;
             padding: 1.5rem 0 2.5rem;
-            border-bottom: 2px solid rgba(79, 70, 229, 0.15);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.08);
         }
 
         .hero .title {
@@ -133,8 +131,7 @@
             padding: 1.8rem 1.8rem 2rem;
             box-shadow: var(--shadow);
             transition: transform var(--transition), box-shadow var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(4px);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             display: flex;
             flex-direction: column;
         }
@@ -149,8 +146,8 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--accent);
-            background: rgba(79, 70, 229, 0.1);
+            color: var(--white);
+            background: var(--accent);
             padding: 0.25rem 0.9rem;
             border-radius: 40px;
             align-self: flex-start;
@@ -201,8 +198,7 @@
             padding: 2rem 2.2rem;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(4px);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -215,8 +211,6 @@
             padding: 0;
             margin: 0;
             font-size: 1.6rem;
-            background: none;
-            -webkit-text-fill-color: var(--text);
         }
 
         .contact-links {
@@ -243,7 +237,7 @@
         .footer {
             margin-top: 4rem;
             padding-top: 1.5rem;
-            border-top: 2px solid rgba(79, 70, 229, 0.15);
+            border-top: 2px solid rgba(0, 0, 0, 0.08);
             font-size: 0.85rem;
             color: var(--gray);
             text-align: center;
@@ -274,7 +268,7 @@
             }
 
             h1 {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
             }
 
             h2 {
@@ -304,7 +298,7 @@
 
         @media (max-width: 400px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
         }
     </style>
