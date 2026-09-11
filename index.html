@@ -26,6 +26,8 @@
             --white: #ffffff;
             --accent: #222222;
             --accent-hover: #000000;
+            --orange: #e67e22;
+            --orange-hover: #d35400;
             --radius: 16px;
             --shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
             --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
@@ -164,6 +166,14 @@
             flex: 1;
         }
 
+        .project-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
+
         .project-link {
             font-weight: 600;
             font-size: 0.9rem;
@@ -173,7 +183,6 @@
             gap: 0.4rem;
             transition: gap var(--transition), color var(--transition);
             border-bottom: 2px solid transparent;
-            align-self: flex-start;
         }
 
         .project-link:hover {
@@ -190,6 +199,16 @@
 
         .project-link:hover::after {
             transform: translateX(4px);
+        }
+
+        /* Enlace "Ver App" en color naranja */
+        .project-link.app-link {
+            color: var(--orange);
+        }
+
+        .project-link.app-link:hover {
+            color: var(--orange-hover);
+            border-bottom-color: var(--orange-hover);
         }
 
         /* ----- CONTACTO ----- */
@@ -323,7 +342,10 @@
                     <span class="project-tag">KSec</span>
                     <h3>Auditor de servidores</h3>
                     <p>Permite analizar cualquier sitio o servicio web en tiempo real, evaluar su postura de seguridad, obtener un puntaje global (0 a 100), generar reportes ejecutivos en PDF y obtener plantillas de configuración de remediación inmediata para servidores populares (Nginx, Apache, Caddy, Cloudflare y Node.js/Express).</p>
-                    <a href="https://github.com/Mario-Malgioglio/KSec-Web-Security" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                    <div class="project-links">
+                        <a href="https://github.com/Mario-Malgioglio/KSec-Web-Security" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                        <a href="https://ksecapp.ai.studio/" class="project-link app-link" target="_blank" rel="noopener noreferrer">Ver App</a>
+                    </div>
                 </article>
 
                 <!-- Proyecto 2: Wi-Fi Security -->
@@ -331,7 +353,9 @@
                     <span class="project-tag">Wi-Fi Security</span>
                     <h3>Wi-Fi Security &amp; Protocol Auditor</h3>
                     <p>Suite defensiva y auditor de protocolos inalámbricos IEEE 802.11 (WPA3, WPA2, WEP, Open, OWE). Desarrollada en Golang puro (sin dependencias externas) con interfaz visual reactiva, modo consola CLI, API REST JSON, exportación CSV y liberación determinista de memoria RAM al cerrar el navegador.</p>
-                    <a href="https://github.com/Mario-Malgioglio/Wi-Fi-Security-Protocol-Auditor" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                    <div class="project-links">
+                        <a href="https://github.com/Mario-Malgioglio/Wi-Fi-Security-Protocol-Auditor" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                    </div>
                 </article>
 
                 <!-- Proyecto 3: Offensive Go Networking -->
@@ -339,7 +363,9 @@
                     <span class="project-tag">Go Security</span>
                     <h3>Offensive Go Networking</h3>
                     <p>Programación Go para Hacking y Ciberseguridad Ofensiva. Herramientas y scripts en Go para pruebas de penetración, escaneo de puertos, sniffing de red y explotación de vulnerabilidades en entornos controlados. Enfoque en eficiencia y concurrencia.</p>
-                    <a href="https://github.com/Mario-Malgioglio/Blackhatgo" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                    <div class="project-links">
+                        <a href="https://github.com/Mario-Malgioglio/Blackhatgo" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                    </div>
                 </article>
 
             </div>
